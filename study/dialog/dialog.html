@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialog-2</title>
+    <style>
+        dialog{
+            margin-top: 10px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 1rem;
+        }
+        dialog::backdrop{
+            background-color: rgba(59, 198, 140, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <button class="modal01">non-modal dialog 열기</button>
+    <button class="modal02">modal 열기</button>
+    
+    <dialog>
+        <span>안녕</span>
+
+        <form>
+            <input type="text"/>
+            <button formmethod="dialog" type="submit">cancel</button>
+            <button type="submit">submit</button>
+        </form>
+    </dialog>
+
+    <script>
+        const dialog=document.querySelector('dialog');
+        const button01=document.querySelector(".modal01");
+        const button02=document.querySelector(".modal02");
+
+        button01.addEventListener("click",()=>{
+            dialog.show();
+        })
+
+        button02.addEventListener("click",()=>{
+            dialog.showModal();
+        })
+    </script>
+</body>
+</html>

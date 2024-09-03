@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element</title>
+    <style>
+        li{
+            float: left;
+            margin-right: 30px;
+            font-size: 32px;
+            list-style: none;
+        }
+
+        li::after{
+            content: "|";
+            padding-left: 30px;
+        }
+        li:last-of-type::after{
+            content: " ";
+        }
+        li:first-of-type::before{
+            content: "시작-";
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+    </ul>
+</body>
+</html>
